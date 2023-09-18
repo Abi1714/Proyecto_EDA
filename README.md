@@ -39,11 +39,11 @@ Checo las correlaciones con un mapa de calor, son las correlaciones con SalePric
 uso un heatmap para de igual manera checar las correlaciones pero de mas cerca, lo vuelvo a hacer con los numericos y categoricos.
 Luego como termine con dos DataFrame y por que quiero checar los datos y compararlos, entonces haciendo esto: "df_concatenado = pd.concat([df_filtra, df_filtered], axis=0)" uso los dos e imprimo un mapa de calor de ambos tipos.
 Contesto preguntas-----
-#1. ¿Con las variables numéricas que se tienen es suficiente para predecir la variable objetivo?
-# Depende de las correlaciones que existan entre ellas, hay algunas positivas significativas, pero
-#no es suficiente, se necesitaria de las variables categoricas.
-#2. ¿Alguna de las variables categóricas servirá realmente para determinar la variable objetivo?
-# Igualmente que con las variables numericas, se necesitan de ambas para poder predecir
+# 1. ¿Con las variables numéricas que se tienen es suficiente para predecir la variable objetivo?
+Depende de las correlaciones que existan entre ellas, hay algunas positivas significativas, pero
+no es suficiente, se necesitaria de las variables categoricas.
+# 2. ¿Alguna de las variables categóricas servirá realmente para determinar la variable objetivo?
+Igualmente que con las variables numericas, se necesitan de ambas para poder predecir
 ---Termino con las preguntas---
 Esta parte despues de las preguntas lo que hace es convertir las columnas en el DataFrame df_filtered a variables numéricas utilizando el "one-hot encoding" y luego combina estas nuevas variables codificadas con el DataFrame original df.
 Se imprimen las correlaciones nuevamente pero ahora con los datos alterados por el one-hot enconding
@@ -63,4 +63,5 @@ top_10_correlaciones = correlaciones_con_saleprice[1:11]
 print("\nLas 10 variables más correlacionadas con SalePrice:")
 print(top_10_correlaciones).
 Fin..
-Conclusiones, si bien el dataset tenia una gran cantidad de datos nulos, la eliminacion no perjudico en medida el resultado, si bien fue dificil saber como resolverlo puesto que hubo momentos en que me perdi o ya no sirvio y tuve que reiniciar, fue satisfactorio terminarlo, el uso de la moda tal vez se pregunte por que, bueno fue por que pense que seria lo mas correcto en caso de que sobrara pocos nulos, Tal vez no uso muy bien las estadisticas por ejemplo podria usar otro tipo para checar los datos o tambien tengo duda si la manera en la que categorize fue la correcta, en este momento creo que si por que al hacerlo en ciclo acortamos el tiempo para hacerlo uno por uno, tambien al inicio pense en no categorizar por que no me salian los datos tipo object, pero pues al final fue mi confucion, por que aunque se creara un df nuevo para ese tipo que solo tuviera numericos tambien cree el otro que contiene object, al final las imprimi juntas para comparar los datos de igual manera, y con eso tambien podria contestar una pregunta  de que si se puede predecir puesto que ya tienen los dos tipos de datos.
+# Conclusiones
+Si bien el dataset tenia una gran cantidad de datos nulos, la eliminacion no perjudico en medida el resultado, si bien fue dificil saber como resolverlo puesto que hubo momentos en que me perdi o ya no sirvio y tuve que reiniciar, fue satisfactorio terminarlo, el uso de la moda tal vez se pregunte por que, bueno fue por que pense que seria lo mas correcto en caso de que sobrara pocos nulos, Tal vez no uso muy bien las estadisticas por ejemplo podria usar otro tipo para checar los datos o tambien tengo duda si la manera en la que categorize fue la correcta, en este momento creo que si por que al hacerlo en ciclo acortamos el tiempo para hacerlo uno por uno, tambien al inicio pense en no categorizar por que no me salian los datos tipo object, pero pues al final fue mi confucion, por que aunque se creara un df nuevo para ese tipo que solo tuviera numericos tambien cree el otro que contiene object, al final las imprimi juntas para comparar los datos de igual manera, y con eso tambien podria contestar una pregunta  de que si se puede predecir puesto que ya tienen los dos tipos de datos.
